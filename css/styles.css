@@ -677,9 +677,8 @@ header {
 
   background-color: rgba(0, 0, 0, 0.2);
 
-  visibility: visible;
   opacity: 1;
-  transition: opasity var(--action-time) var(--action-function),
+  transition: opacity var(--action-time) var(--action-function),
     visibility var(--action-time) var(--action-function);
 }
 
