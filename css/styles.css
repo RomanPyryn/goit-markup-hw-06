@@ -175,10 +175,11 @@ header {
 /* Шапка */
 
 .hero {
-  max-width: 1600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 1600px;
   height: 600px;
-  margin-left: auto;
-  margin-right: auto;
   padding: 200px 0;
 
   background-image: linear-gradient(
@@ -205,10 +206,13 @@ header {
   text-transform: uppercase;
 }
 
-.hero-button {
-  display: inline-block;
-  min-width: 200px;
-  padding: 10px 32px;
+.action-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+
   border: transparent;
   border-radius: 4px;
   cursor: pointer;
@@ -220,15 +224,13 @@ header {
   letter-spacing: 0.06em;
   background-color: var(--hover-text-color);
 
-  transition: color var(--action-time) var(--action-function),
-    background-color var(--action-time) var(--action-function),
+  transition: background-color var(--action-time) var(--action-function),
     box-shadow var(--action-time) var(--action-function);
 }
 
-.hero-button:hover,
-.hero-button:focus {
-  color: var(--title-text-color);
-  background-color: var(--secondary-bg);
+.action-button:hover,
+.action-button:focus {
+  background-color: #188ce8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
@@ -638,6 +640,10 @@ header {
   margin-top: 20px;
 }
 
+.subscribe-label {
+  margin-right: 12px;
+}
+
 .subscribe-input {
   display: flex;
   align-items: center;
@@ -657,26 +663,6 @@ header {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
   background-color: transparent;
-}
-
-.subscribe-button {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin-left: 12px;
-  padding-left: 29px;
-  width: 200px;
-  height: 50px;
-
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.87;
-  letter-spacing: 0.06em;
-
-  color: var(--white);
-  background: #2196f3;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
 }
 
 /* Бекдроп */
@@ -762,7 +748,10 @@ header {
 .modal-label {
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+}
+
+.modal-label + .modal-label {
+  margin-top: 10px;
 }
 
 .modal-text {
@@ -793,4 +782,34 @@ header {
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+}
+
+.agreement {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.modal-text-agreement {
+  margin-left: 7px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+
+  color: var(--primary-text-color);
+}
+
+.modal-text-agreement .link {
+  text-decoration: underline;
+  color: var(--hover-text-color);
+}
+
+.modal-submit-button {
+  display: flex;
+  justify-content: center;
+
+  margin-top: var(--card-set-gap);
 }
