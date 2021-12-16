@@ -728,6 +728,13 @@ header {
   background: var(--white);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+
+  fill: var(--title-text-color);
+}
+
+.modal-button:hover,
+.modal-button:focus {
+  fill: var(--hover-text-color);
 }
 
 .modal-form {
@@ -748,13 +755,27 @@ header {
   color: var(--title-text-color);
 }
 
-.modal-label {
+.modal-item {
   position: relative;
   display: flex;
   flex-direction: column;
+
+  fill: var(--title-text-color);
 }
 
-.modal-label + .modal-label {
+.modal-item:hover,
+.modal-item:hover {
+  fill: var(--hover-text-color);
+}
+
+.modal-item:hover .modal-input,
+.modal-item:hover .modal-input,
+.modal-item:hover .modal-textarea,
+.modal-item:hover .modal-textarea {
+  border: 1px solid var(--hover-text-color);
+}
+
+.modal-item + .modal-item {
   margin-top: 10px;
 }
 
@@ -765,6 +786,7 @@ header {
 }
 
 .modal-text {
+  display: block;
   margin-bottom: 4px;
 
   font-weight: 400;
@@ -783,6 +805,8 @@ header {
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+
+  cursor: pointer;
 }
 
 .modal-textarea {
@@ -792,6 +816,9 @@ header {
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+
+  cursor: pointer;
+  resize: none;
 }
 
 .modal-textarea::placeholder {
@@ -803,11 +830,28 @@ header {
   color: rgba(117, 117, 117, 0.5);
 }
 
+.modal-label.label-textarea {
+  height: 138px;
+}
+
 .agreement {
-  flex-direction: row;
-  justify-content: center;
+  display: flex;
   align-items: center;
+  justify-content: center;
   margin-top: 20px;
+  fill: var(--white);
+  background-origin: border-box;
+}
+
+.agreement .icon {
+  border: 2px solid var(--title-text-color);
+  border-radius: 2px;
+  background-origin: border-box;
+}
+
+.checkbox:checked + .icon {
+  fill: var(--hover-text-color);
+  border: 0;
 }
 
 .modal-text-agreement {
