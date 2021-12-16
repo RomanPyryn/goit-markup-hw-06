@@ -782,18 +782,6 @@ header {
   transition: fill var(--action-time) var(--action-function);
 }
 
-.modal-item:hover,
-.modal-item:hover {
-  fill: var(--hover-text-color);
-}
-
-.modal-item:hover .modal-input,
-.modal-item:hover .modal-input,
-.modal-item:hover .modal-textarea,
-.modal-item:hover .modal-textarea {
-  border: 1px solid var(--hover-text-color);
-}
-
 .modal-item + .modal-item {
   margin-top: 10px;
 }
@@ -824,8 +812,10 @@ header {
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  outline: transparent;
 
   cursor: pointer;
+  z-index: 10;
 
   transition: border var(--action-time) var(--action-function);
 }
@@ -837,9 +827,22 @@ header {
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  outline: transparent;
 
   cursor: pointer;
   resize: none;
+}
+
+.modal-input:hover + .icon,
+.modal-input:focus + .icon {
+  fill: var(--hover-text-color);
+}
+
+.modal-input:hover,
+.modal-input:focus,
+.modal-textarea:hover,
+.modal-textarea:focus {
+  border: 1px solid var(--hover-text-color);
 }
 
 .modal-textarea::placeholder {
