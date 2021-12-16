@@ -730,6 +730,7 @@ header {
   border-radius: 50%;
 
   fill: var(--title-text-color);
+  transition: fill var(--action-time) var(--action-function);
 }
 
 .modal-button:hover,
@@ -761,6 +762,7 @@ header {
   flex-direction: column;
 
   fill: var(--title-text-color);
+  transition: fill var(--action-time) var(--action-function);
 }
 
 .modal-item:hover,
@@ -807,6 +809,8 @@ header {
   border-radius: 4px;
 
   cursor: pointer;
+
+  transition: border var(--action-time) var(--action-function);
 }
 
 .modal-textarea {
@@ -841,6 +845,8 @@ header {
   margin-top: 20px;
   fill: var(--white);
   background-origin: border-box;
+
+  transition: fill var(--action-time) var(--action-function);
 }
 
 .agreement .icon {
